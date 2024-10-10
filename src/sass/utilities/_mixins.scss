@@ -1,0 +1,64 @@
+@mixin Title26($textColor: var(--title-gray)) {
+  font-family: var(--font-title);
+  font-size: 2.6rem;
+  line-height: 2.6rem;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if $textColor {
+    color: $textColor;
+  }
+}
+
+@mixin Title18($textColor: var(--title-gray)) {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if $textColor {
+    color: $textColor;
+  }
+}
+
+@mixin Body18($textColor: null, $bold: null) {
+  font-family: var(--font-body);
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if $textColor {
+    color: $textColor;
+  } @else {
+    color: var(--paragraph-gray);
+  }
+
+  @if $bold {
+    font-family: var(--font-body-bold);
+  } @else {
+    font-family: var(--font-body);
+  }
+}
+@mixin Body16($textColor: null, $bold: null) {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: -0.1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if $textColor {
+    color: $textColor;
+  } @else {
+    color: var(--paragraph-gray);
+  }
+  @if $bold {
+    font-weight: bold;
+    letter-spacing: 0.2px;
+  }
+}

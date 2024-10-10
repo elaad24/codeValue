@@ -1,0 +1,15 @@
+.nav-bar {
+  position: sticky;
+  margin-top: 1.6rem;
+  height: $navbar-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100vw - 3.2rem);
+  background-color: var(--nav-bar-gray);
+  border-radius: 0.2rem;
+  z-index: 9999;
+  box-shadow: var(--header-top-shadow);
+  text-transform: capitalize;
+  @include Title26;
+}

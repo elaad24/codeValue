@@ -1,0 +1,31 @@
+.productItem {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  .textPart {
+    display: flex;
+    gap: 2rem;
+    cursor: pointer;
+    .thumbnail {
+      height: 12rem;
+      width: auto;
+      max-width: 15rem;
+    }
+    .text {
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        @include Title26;
+      }
+      .subtitle {
+        @include Body18;
+      }
+    }
+  }
+  .deleteBtn {
+    background-color: orange;
+  }
+}

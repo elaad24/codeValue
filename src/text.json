@@ -1,0 +1,14 @@
+{
+  "myStore": "my store",
+  "add": "add",
+  "save": "save",
+  "searchProduct": "search product",
+  "sortBy": "sort by",
+  "name": "name",
+  "reacentAdded": "recently added",
+  "details": "details",
+  "prevPage": "prev page",
+  "nextPage": "next page",
+  "delete": "delete",
+  "of": "of"
+}

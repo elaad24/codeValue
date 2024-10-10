@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+  direction: ltr;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+input,
+textarea {
+  caret-color: var(--dibble-yellow);
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    outline: none !important;
+  }
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 62.5%; //10px
+}
+
+.app {
+  min-height: 100vh;
+  height: 100%;
+  width: calc(100vw - 32px);
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--body-color);
+  padding: 0 16px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.sections {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 10fr 8fr;
+  gap: 1rem;
+  width: calc(100vw - 4.2rem);
+  align-self: stretch;
+}
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  .txt {
+    @include Title18(black);
+  }
+}
+
+.Btn {
+  height: 2rem;
+  width: auto;
+  align-self: flex-end;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  @include Body16(black, bold);
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+}
