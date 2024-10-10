@@ -9,6 +9,7 @@ import EditItemSection from "./components/EdithItemSection";
 import { useDispatch, useSelector } from "react-redux";
 import { init, updateProducts } from "./redux/slices/productSlice";
 import { RootState } from "./redux/store";
+import AddItemSection from "./components/AddItemSection";
 
 function App() {
   const dispatch = useDispatch();
@@ -136,8 +137,8 @@ function App() {
               />
             )}
             {editItemOpen == false && createItem === true && (
-              <EditItemSection
-                onClose={() => setEditItemOpen(false)}
+              <AddItemSection
+                onClose={() => setCreateItem(false)}
                 ID={0}
                 name={""}
                 description={""}

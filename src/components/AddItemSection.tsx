@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { productInterface } from "./ItemsSection";
 import { useDispatch } from "react-redux";
-import { editProduct } from "../redux/slices/productSlice";
+import { addProduct } from "../redux/slices/productSlice";
 import { formatDate } from "../utils/dateFormat";
 
-interface EditItemSectionInterface extends productInterface {
+interface AddItemSectionInterface extends productInterface {
   onClose: () => void;
 }
-export default function EditItemSection({
+export default function AddItemSection({
   ID,
   name,
   description,
   price,
   img,
   onClose,
-}: EditItemSectionInterface) {
+}: AddItemSectionInterface) {
   const [productName, setProductName] = useState<string>(name);
   const [productDescription, setProductDescription] = useState<string>(
     description || ""
@@ -32,7 +32,7 @@ export default function EditItemSection({
       img,
       creationDate: formatDate(new Date()),
     };
-    dispatch(editProduct(updatedProduct));
+    dispatch(addProduct(updatedProduct));
     onClose();
   };
 

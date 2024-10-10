@@ -11,7 +11,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect }) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
     setSelectedOption(value);
-    onSelect(value); // Notify parent component of selection
+    onSelect(value);
   };
 
   return (

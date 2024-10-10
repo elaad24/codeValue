@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import text from "../text.json";
 
-// Debounce utility function
 const useDebounce = (value: string, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -24,9 +23,8 @@ interface searchbarintgerface {
 
 export default function SearchBar({ setState }: searchbarintgerface) {
   const [searchTerm, setSearchTerm] = useState("");
-  const debouncedSearchTerm = useDebounce(searchTerm, 500); // 500ms debounce
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-  // Simulate API search (for example purposes)
   useEffect(() => {
     setState(debouncedSearchTerm);
   }, [debouncedSearchTerm]);
