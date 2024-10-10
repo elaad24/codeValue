@@ -10,13 +10,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { init, updateProducts } from "./redux/slices/productSlice";
 import { RootState } from "./redux/store";
 import AddItemSection from "./components/AddItemSection";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.products);
 
   const fullData = mockdata;
-  const [data, setdata] = useState<productInterface[]>(products || []);
+  const [data, setdata] = useLocalStorage<productInterface[]>(
+    "products",
+    products || []
+  );
+
   const [editItemOpen, setEditItemOpen] = useState<boolean>(false);
   const [itemToOpen, setItemToOpen] = useState<productInterface | null>(null);
   const [searchText, setSearchText] = useState<string>("");
@@ -35,8 +40,13 @@ function App() {
   });
 
   useEffect(() => {
-    dispatch(init(fullData));
+    if (data.length) {
+      dispatch(init(data));
+    } else {
+      dispatch(init(fullData));
+    }
   }, []);
+
   useEffect(() => {
     if (products) {
       setdata(products);
@@ -139,7 +149,7 @@ function App() {
             {editItemOpen == false && createItem === true && (
               <AddItemSection
                 onClose={() => setCreateItem(false)}
-                ID={0}
+                ID={Math.random()}
                 name={""}
                 description={""}
                 price={1}
